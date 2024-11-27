@@ -1,0 +1,145 @@
+
+.landing {
+    color: white;
+    height: auto;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+    
+
+}
+
+.landing h1 {
+    font-family: "Cormorant Sans";
+    font-size: 8rem;
+
+}
+
+.landing h3 {
+    font-family: "Instrument Sans";
+    font-size: 2rem;
+    margin-top: -4rem;
+}
+
+.hero {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    width: 100%
+    
+    
+  }
+
+  .main-body {
+    display: flex;
+    flex-direction: column;
+    padding-left: 8vh;
+    justify-content: center;
+    
+    
+}
+
+.login-button {
+    font-size: 1.5rem;
+    padding: 0.75rem 2.5rem;
+
+    margin-right: 25rem;
+    background-color: white;
+    color: #0a1128;
+    font-family: "Instrument Sans";
+    font-weight: 600;
+
+    border: none;
+    border-radius: 15px;
+
+
+}
+
+.login-button:hover {
+    transform: scale(1.03); 
+}
+
+.astrowheel-container{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+   
+  }
+  
+  .astrowheel-container img {
+    right: 0;
+    position: relative;
+    margin-left: 12rem;
+    margin-top: 2.5rem;
+    width: 45%;
+    height: auto;
+
+      
+  
+  }
+
+  .about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10rem;
+    text-align: center;
+    font-family: "Instrument Sans";
+  }
+
+  .about h2 {
+    font-size: 3rem;
+    margin-bottom: 0;
+  }
+
+  .about p{
+    font-size: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .features {
+    background-color: white;
+    color: black;
+    padding-right: 2rem;
+  }
+  
+  .features-grid {
+    display:grid;
+    grid-template-columns:  repeat(4,1fr);
+    gap: 50px;
+    margin-left: 0;
+    padding-top:2rem; 
+    padding-bottom:2rem; 
+
+  }
+
+  .features-card {
+    background-color: white;
+    border-radius: 25px;
+    border: 15px white solid;
+    line-height:150%;
+    text-align: center;
+    
+    
+  }
+
+  .features-card img {
+    width: 50%;
+  }
+
+  .tarot-grid {
+    display:grid;
+    grid-template-columns:  repeat(4,1fr);
+    gap: 50px;
+    margin-top: 10rem;
+    margin-bottom: 10rem;
+    margin-left: 3rem;
+
+  }
+
+  .tarot-grid img {
+    width: 80%;
+  }
