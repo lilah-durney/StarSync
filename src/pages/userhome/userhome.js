@@ -3,7 +3,7 @@ import "./userhome.css";
 
 function UserHome() {
     return (
-        <p>User Home</p>
+        <div className = "userHome">User Home</div>
     )
 
 }
