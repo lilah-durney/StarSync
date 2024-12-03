@@ -11,19 +11,46 @@ const Signup = () => {
     const [confirmPassword, setConfirmPassword] = useState("");
     const [notice, setNotice] = useState("");
 
+    // Map Firebase error codes to user-friendly messages
+    const errorMessages = {
+        "auth/email-already-in-use": "Email already in use. Please try another email.",
+        "auth/invalid-email": "Invalid email address. Please enter a valid email.",
+        "auth/weak-password": "Weak password. Password should be at least 6 characters.",
+        "auth/network-request-failed": "Network error. Please check your connection.",
+        "auth/operation-not-allowed": "This operation is not allowed. Please contact support.",
+        "auth/too-many-requests": "Too many attempts. Please try again later.",
+    };
+
     const signupWithUsernameAndPassword = async (e) => {
         e.preventDefault();
 
-        if (password === confirmPassword) {
-            try {
-                await createUserWithEmailAndPassword(auth, email, password);
-                console.log("Signup successful");
-                navigate("/inputprofile");
-            } catch {
-                setNotice("Sorry, something went wrong. Please try again.");
-            }
-        } else {
+        // Check for matching passwords
+        if (password !== confirmPassword) {
             setNotice("Passwords don't match. Please try again.");
+            return;
+        }
+
+        // Check for valid password length
+        if (password.length < 6) {
+            setNotice("Password must be at least 6 characters.");
+            return;
+        }
+
+        // Check for valid email format
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            setNotice("Please enter a valid email address.");
+            return;
+        }
+
+        try {
+            await createUserWithEmailAndPassword(auth, email, password);
+            console.log("Signup successful");
+            navigate("/inputprofile");
+        } catch (error) {
+            console.error("Firebase Error:", error.code, error.message);
+            const userFriendlyMessage = errorMessages[error.code] || "An unexpected error occurred. Please try again.";
+            setNotice(userFriendlyMessage);
         }
     };
 

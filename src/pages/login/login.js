@@ -57,7 +57,7 @@ const Login = () => {
                 {isResetLinkVisible && (
                     <div className="reset-link">
                         <p>
-                            Forgot your password? Reset it <Link to="/password-reset">here</Link>.
+                            Forgot your password? Reset it <Link to="/passwordreset">here</Link>.
                         </p>
                     </div>
                 )}
