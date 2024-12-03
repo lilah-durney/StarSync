@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { auth } from "../../firebase"; // Import your Firebase config
 import { sendPasswordResetEmail } from "firebase/auth";
 import { Link } from "react-router-dom";
+import "./passwordreset.css"; 
 
 const PasswordReset = () => {
   const [email, setEmail] = useState("");
@@ -24,39 +25,28 @@ const PasswordReset = () => {
   };
 
   return (
-    <div className="container">
-      <div className="row justify-content-center">
-        <div className="col-md-4 mt-3 pt-3 pb-3">
-          {notice && (
-            <div className="alert alert-info" role="alert">
-              {notice}
-            </div>
-          )}
-          <form onSubmit={handlePasswordReset}>
-            <div className="form-floating mb-3">
-              <input
-                id="resetEmail"
-                type="email"
-                className="form-control"
-                placeholder="Enter your email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-              <label htmlFor="resetEmail">Enter your email address</label>
-            </div>
-            <div className="d-grid">
-              <button type="submit" className="btn btn-primary">
-                Reset Password
-              </button>
-            </div>
-          </form>
-          <div className="mt-3 text-center">
-            <span>
-              Remember your password? <Link to="/login">Login here.</Link>
-            </span>
+    <div className="reset-container">
+      <form className="reset-form" onSubmit={handlePasswordReset}>
+        {notice && (
+          <div className="notice">
+            {notice}
           </div>
+        )}
+        <div className="input-group">
+          <label htmlFor="resetEmail">Enter your email address</label>
+          <input
+            id="resetEmail"
+            type="email"
+            placeholder="Enter your email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
         </div>
-      </div>
+        <button type="submit" className="submit-button">Reset Password</button>
+        <div className="login-link">
+          Remember your password? <Link to="/login">Login here.</Link>
+        </div>
+      </form>
     </div>
   );
 };
