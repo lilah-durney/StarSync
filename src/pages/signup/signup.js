@@ -11,6 +11,8 @@ const Signup = () => {
     const [confirmPassword, setConfirmPassword] = useState("");
     const [notice, setNotice] = useState("");
 
+    
+
     // Map Firebase error codes to user-friendly messages
     const errorMessages = {
         "auth/email-already-in-use": "Email already in use. Please try another email.",

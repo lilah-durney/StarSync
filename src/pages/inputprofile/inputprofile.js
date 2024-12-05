@@ -1,31 +1,69 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { auth } from '../../firebase'; // Assuming your Firebase setup is correct
-import './inputprofile.css'; // Add custom styles here
+import { auth } from '../../firebase'; 
+import {doc, getDoc, setDoc, db} from '../../firebase';
+import './inputprofile.css'; 
+import { onAuthStateChanged } from 'firebase/auth';
 
 const InputProfile = () => {
   const navigate = useNavigate();
   const [name, setName] = useState('');
-  const [birthPlace, setBirthPlace] = useState('');
+  const [birthCity, setBirthCity] = useState('');
+  const [birthState, setBirthState] = useState('');
   const [birthDate, setBirthDate] = useState('');
   const [birthTime, setBirthTime] = useState('');
 
+
   useEffect(() => {
     // Redirect to login if the user is not authenticated
-    if (!auth.currentUser) {
-      navigate('/login');
-    }
+    const unsuscribe = onAuthStateChanged(auth, (user) => {
+      if (!user) navigate("/login");
+    });
+    return () => unsuscribe();
   }, [navigate]);
 
-  const handleSubmit = () => {
-    console.log({ name, birthPlace, birthDate, birthTime });
-    // Send this data to the backend or process it as needed
+  const handleSubmit = async () => {
+    if (!auth.currentUser) {
+      console.error("No user authenticated");
+      return;
+    } else {
+      console.log("User is authenticated");
+    }
+
+   
+    
+    const userId = auth.currentUser.uid;
+
+    const userProfile = {name, birthCity, birthState, birthDate, birthTime} 
+    
+    console.log("userID:", userId)
+    console.log("userProfile:", userProfile);
+    try {
+      await setDoc(
+        doc(db, "users", userId),
+       userProfile, 
+       { merge: true} 
+      );
+      console.log("Successfully saved profile to database.")
+      const docRef = doc(db, "users", userId);
+      const docSnap = await getDoc(docRef);
+
+      if (docSnap.exists()) {
+        console.log("Added profile:", docSnap.data());
+      } else {
+        console.log("No such document");
+      }
+
+
+
+    } catch(error) {
+      console.error("Error saving user profile:", error);
+      
+    }
+
+    navigate("/home");
   };
 
-  // Render nothing if the user is not authenticated
-  if (!auth.currentUser) {
-    return null;
-  }
 
   return (
     <div className="input-profile-container">
@@ -50,13 +88,25 @@ const InputProfile = () => {
           </div>
 
           <div className="form-group">
-            <label htmlFor="birthPlace">I was born in</label>
+            <label htmlFor="birthCity">I was born in</label>
             <input
               type="text"
-              id="birthPlace"
-              value={birthPlace}
-              onChange={(e) => setBirthPlace(e.target.value)}
-              placeholder="City, State"
+              id="birthCity"
+              value={birthCity}
+              onChange={(e) => setBirthCity(e.target.value)}
+              placeholder="City"
+              required
+            />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="birthState"></label>
+            <input
+              type="text"
+              id="birthState"
+              value={birthState}
+              onChange={(e) => setBirthState(e.target.value)}
+              placeholder="State"
               required
             />
           </div>
