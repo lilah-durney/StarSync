@@ -1,71 +1,65 @@
 .input-profile-container {
+    background-color: #162136;
+    color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
-    background-color: #2b2b2b; /* Matching the dark theme */
-    color: white;
-  }
-  
-  .input-profile-content {
-    width: 90%;
-    max-width: 400px;
+    height: 100vh;
+    font-family: "Instrument Sans", sans-serif;
     text-align: center;
-    background: #1a1a1a;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   }
   
-  .title {
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #ffffff;
+  .profile-title {
+    font-size: 2.5rem;
+    font-family: "Cormorant Sans", serif;
+    margin-bottom: 2rem;
   }
   
-  .form-group {
-    margin-bottom: 15px;
-    text-align: left;
+  .inline-form p {
+    font-size: 1.8rem;
+    line-height: 2.5rem;
+    margin: 1.5rem 0;
   }
   
-  label {
-    display: block;
-    font-size: 14px;
-    margin-bottom: 5px;
-  }
-  
-  input {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    background: #333;
+  .input-field {
+    background-color: #162136; /* Same as the background */
     color: white;
+    border: none;
+    border-bottom: 2px solid white;
+    padding: 0.5rem;
+    font-size: 1.3rem;
+    text-align: center;
+    width: 12rem; /* Adjust width for better alignment */
   }
   
-  input::placeholder {
-    color: #aaa;
+  .input-field::placeholder {
+    color: #d3d3d3;
   }
   
-  input:focus {
-    outline: 2px solid #4a90e2;
+  .input-field:focus {
+    outline: none;
+    border-bottom: 2px solid #00aaff; /* Highlight on focus */
+  }
+  
+  input[type="date"]::-webkit-calendar-picker-indicator,
+  input[type="time"]::-webkit-calendar-picker-indicator {
+    filter: invert(100%); /* White icons for dark background */
   }
   
   .generate-chart-button {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    color: white;
-    background: #4a90e2;
+    margin-top: 2rem;
+    padding: 0.8rem 2rem;
+    background-color: white;
+    color: #162136;
     border: none;
-    border-radius: 5px;
+    font-size: 1.3rem;
     cursor: pointer;
-    transition: background 0.3s;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
   
   .generate-chart-button:hover {
-    background: #357abd;
+    background-color: #e0e0e0;
+    color: #162136;
   }
-  

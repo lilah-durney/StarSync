@@ -17,7 +17,7 @@ const Login = () => {
         try {
             await signInWithEmailAndPassword(auth, email, password);
             console.log("Login successful");
-            navigate("/home");
+            navigate("/userhome");
         } catch (error) {
             setNotice("You entered a wrong username or password.");
             setIsResetLinkVisible(true); // Show the reset link on failure

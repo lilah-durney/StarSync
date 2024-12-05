@@ -1,0 +1,108 @@
+.user-home-container {
+    font-family: "Instrument Sans", sans-serif;
+    color: #fff;
+    background-color: #1a1a2e;
+    padding: 20px;
+    min-height: 100vh;
+  }
+  
+  .user-home-header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .user-home-header h2 {
+    font-size: 2.5rem;
+    color: #ffffff;
+  }
+  
+  .user-home-header p {
+    font-size: 1.2rem;
+    color: #a8d0e6;
+  }
+  
+  .loading {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #f8f9fa;
+  }
+  
+  /* Layout for main content */
+  .main-content {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  
+  .chart-container {
+    flex: 1;
+    max-width: 400px;
+  }
+  
+  .chart-image {
+    max-width: 100%;
+    height: auto;
+    border: 3px solid #00adb5;
+    border-radius: 10px;
+  }
+  
+  .tables-container {
+    flex: 2;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+  }
+  
+  .table-container {
+    flex: 1;
+    background-color: #162447;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .table-container h3 {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #00adb5;
+  }
+  
+  .table-container table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .table-container th,
+  .table-container td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #2b2e4a;
+  }
+  
+  .table-container tr:nth-child(odd) {
+    background-color: #1a1a2e;
+  }
+  
+  .table-container tr:nth-child(even) {
+    background-color: #162447;
+  }
+  
+  /* Personality Report */
+  .report-container {
+    margin-top: 20px;
+    background-color: #162447;
+    color: #e8e8e8;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .report-container h3 {
+    color: #00adb5;
+  }
+  
+  .report-container p {
+    line-height: 1.6;
+  }
+  

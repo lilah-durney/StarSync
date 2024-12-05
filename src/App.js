@@ -21,7 +21,7 @@ function App() {
           <Route path = "/login" element = {<Login />} />
           <Route path = "/signup" element = {<Signup />} />
           <Route path = "/passwordreset" element = {<PasswordReset />} />
-          <Route path = "/home" element = {<UserHome />} />
+          <Route path = "/userhome" element = {<UserHome />} />
           <Route path = "/inputprofile" element = {<InputProfile />} />
           <Route path = "/compatibility" element = {<CompatibilityTest />} />
 
