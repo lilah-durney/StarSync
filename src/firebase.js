@@ -9,7 +9,7 @@ import {getFirestore, doc, setDoc, getDoc} from "firebase/firestore";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyDz65M1gt2wRVN5sa3SAHUHNeP-wY-PS1w",
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
   authDomain: "starsync-11b5d.firebaseapp.com",
   projectId: "starsync-11b5d",
   storageBucket: "starsync-11b5d.firebasestorage.app",

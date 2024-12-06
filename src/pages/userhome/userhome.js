@@ -40,6 +40,7 @@ const UserHome = () => {
 
   // Fetch Astrology API Data
   useEffect(() => {
+    
     const fetchData = async () => {
       if (!userInfo) return;
 
@@ -59,10 +60,11 @@ const UserHome = () => {
       };
       console.log("Sending request to API with data:", data);
 
-      const apiBaseUrl = "https://json.astrologyapi.com/v1";
-      const apiUserId = "635404";
-      const apiKey = "f08a8f98a8899b62ea40d9fb218c0c1c7319a1eb";
+      const apiBaseUrl = process.env.REACT_APP_ASTROLOGY_API_BASE_URL;
+      const apiUserId = process.env.REACT_APP_ASTROLOGY_API_USER_ID;
+      const apiKey = process.env.REACT_APP_ASTROLOGY_API_KEY;
       const authHeader = "Basic " + btoa(`${apiUserId}:${apiKey}`);
+      console.log(process.env.REACT_APP_ASTROLOGY_API_BASE_URL);
 
       try {
         // Fetch Natal Chart
@@ -117,6 +119,7 @@ const UserHome = () => {
         setPersonalityReport(personalityResult?.report?.join(" ") || "");
       } catch (error) {
         console.error("Error fetching data from API:", error);
+       
       } finally {
         setLoading(false);
       }

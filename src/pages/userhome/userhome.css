@@ -5,6 +5,7 @@ body {
     font-family: "Instrument Sans", sans-serif;
     
     color: #fff;
+
 }
 
 /* Header Styling */
@@ -31,6 +32,7 @@ body {
     width: 100%;
     max-width: 1200px;
     margin: auto;
+    
 }
 
 /* Chart and Tables Container */
