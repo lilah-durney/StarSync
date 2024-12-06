@@ -60,8 +60,8 @@ const UserHome = () => {
       console.log("Sending request to API with data:", data);
 
       const apiBaseUrl = "https://json.astrologyapi.com/v1";
-      const apiUserId = "635385";
-      const apiKey = "e0d5b714f7697abe3d8f547032736c3707da18b8";
+      const apiUserId = "635404";
+      const apiKey = "f08a8f98a8899b62ea40d9fb218c0c1c7319a1eb";
       const authHeader = "Basic " + btoa(`${apiUserId}:${apiKey}`);
 
       try {
@@ -181,14 +181,20 @@ const UserHome = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {planets.map((planet, index) => (
-                    <tr key={index}>
-                      <td>{planet.name}</td>
-                      <td>{planet.sign}</td>
-                      <td>{planet.house}</td>
-                      <td>{planet.retrograde ? "Yes" : "No"}</td>
+                  {Array.isArray(planets) && planets.length > 0 ? (
+                    planets.map((planet, index) => (
+                      <tr key={index}>
+                        <td>{planet.name}</td>
+                        <td>{planet.sign}</td>
+                        <td>{planet.house}</td>
+                        <td>{planet.retrograde ? "Yes" : "No"}</td>
+                      </tr>
+                    ))
+                  ) : (
+                    <tr>
+                      <td colSpan="4">No data available</td>
                     </tr>
-                  ))}
+                  )}
                 </tbody>
               </table>
             </div>
