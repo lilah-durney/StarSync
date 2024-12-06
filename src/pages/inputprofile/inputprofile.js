@@ -44,23 +44,23 @@ const InputProfile = () => {
   
     // Ensure all required parameters for API calls are captured
     const userProfile = {
-      name,
-      birthCity,
-      birthState,
-      day: parseInt(birthDate.split("-")[2]), // Extract day
-      month: parseInt(birthDate.split("-")[1]), // Extract month
-      year: parseInt(birthDate.split("-")[0]), // Extract year
-      hour: parseInt(birthTime.split(":")[0]), // Extract hour
-      min: parseInt(birthTime.split(":")[1]), // Extract minute
-      lat: parseFloat(latitude) || 0.0, // Optional latitude
-      lon: parseFloat(longitude) || 0.0, // Optional longitude
-      tzone: parseFloat(timezone) || 0.0, // Optional timezone
-    };
+        name,
+        birthCity,
+        birthState,
+        birthDate, // Save the full date as a string (e.g., "YYYY-MM-DD")
+        birthTime, // Save the full time as a string (e.g., "HH:mm")
+        lat: parseFloat(latitude) || 0.0,
+        lon: parseFloat(longitude) || 0.0,
+        tzone: parseFloat(timezone) || 0.0,
+      };
+      console.log("User profile being saved:", userProfile);
+
+      
   
     try {
       await setDoc(doc(db, "users", userId), userProfile, { merge: true });
       console.log("Successfully saved profile to database.");
-      navigate("/home");
+      navigate("/userhome");
     } catch (error) {
       console.error("Error saving user profile:", error);
     }
