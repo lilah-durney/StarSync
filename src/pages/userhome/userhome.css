@@ -1,0 +1,172 @@
+/* General Styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Instrument Sans", sans-serif;
+    background-color: #1a1a2e;
+    color: #fff;
+}
+
+/* Header Styling */
+.user-home-header {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.user-home-header h2 {
+    font-size: 3rem;
+    color: #ffffff;
+}
+
+.user-home-header p {
+    font-size: 1.2rem;
+    color: #a8d0e6;
+}
+
+/* Main Content */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Chart and Tables Container */
+.chart-tables-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1200px;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+/* Chart Styling */
+.chart-container {
+    flex: 1.8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 600px;
+}
+
+.chart-image {
+    width: 100%;
+    height: auto;
+    max-width: 500px;
+    border: 3px solid #00adb5;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Tables Container */
+.table-container-left,
+.table-container-right {
+    flex: 0 0 auto;
+    background-color: #162447;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 350px;
+    min-width: 300px;
+    box-sizing: border-box;
+}
+
+.table-container h3 {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #00adb5;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+/* Table Styling */
+.table-container table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed; /* Ensures columns are consistent */
+}
+
+.table-container th,
+.table-container td {
+    padding: 12px; /* Increased padding for better spacing */
+    text-align: center;
+    border: 1px solid #2b2e4a;
+    color: #e8e8e8;
+    font-size: 1rem; /* Slightly larger font size for readability */
+    word-wrap: break-word; /* Prevents text overflow */
+}
+
+.table-container tr {
+    transition: background-color 0.2s ease; /* Smooth hover transition */
+}
+
+.table-container tr:nth-child(odd) {
+    background-color: #1a1a2e;
+}
+
+.table-container tr:nth-child(even) {
+    background-color: #162447;
+}
+
+.table-container tr:hover {
+    background-color: #00adb5; /* Highlight the row on hover */
+    color: #ffffff; /* Change text color on hover */
+}
+
+.table-container th {
+    background-color: #00adb5;
+    color: #ffffff;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.05em; /* Slight spacing for better appearance */
+}
+
+/* Personality Report */
+.report-container {
+    background-color: #162447;
+    color: #e8e8e8;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.report-container h3 {
+    text-align: center;
+    color: #00adb5;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+
+.report-container p {
+    line-height: 1.6;
+    font-size: 1rem;
+    text-align: justify;
+    color: #d0d0d0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .chart-tables-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .table-container-left,
+    .table-container-right {
+        width: 100%;
+        max-width: unset; /* Allow full width on smaller screens */
+    }
+
+    .chart-container {
+        max-width: 100%;
+    }
+}
