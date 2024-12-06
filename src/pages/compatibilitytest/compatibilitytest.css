@@ -1,3 +1,53 @@
-.compabilitity-test {
-    color: white; 
-}
+.compatibility-container {
+    text-align: center;
+    padding: 2rem;
+    color: white;
+  }
+  
+  .partner-input {
+    margin-top: 1rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  button {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  button:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+  }
+  
+  button:hover:enabled {
+    background-color: #218838;
+  }
+  
+  .report-container {
+    margin-top: 2rem;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    color: #333;
+    text-align: left;
+    max-width: 600px;
+    margin: 2rem auto;
+  }
+  
+  .error {
+    margin-top: 1rem;
+    color: red;
+    font-weight: bold;
+  }
+  
