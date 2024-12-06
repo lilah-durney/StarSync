@@ -66,6 +66,7 @@
 
 /* Signup link */
 .signup-link {
+    color: black;
     margin-top: 1rem;
     font-size: 14px;
 }

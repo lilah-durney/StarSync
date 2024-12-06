@@ -20,7 +20,7 @@ function NavBar() {
     //Only show navbar if the user is logged in. 
     return user ? (
         <nav className = "navbar">
-            <Link to = "/home">Home</Link>
+            <Link to = "/userhome">Home</Link>
             <Link to = "/compatibility">Compatibility Test</Link>
             <Link to = "#" onClick={logoutUser}>Logout</Link>
         </nav>
